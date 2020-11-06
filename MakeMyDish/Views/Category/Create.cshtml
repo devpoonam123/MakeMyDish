@@ -1,0 +1,51 @@
+﻿@model MakeMyDish.Models.Category
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: #4CAF50;
+    }
+</style>
+
+@using (Html.BeginForm("Create","Category",FormMethod.Post)) {
+<div>
+    <label for="fname"> Name</label>
+    @Html.TextBoxFor(m => m.name, new { placeholder = "category name.." })
+</div>
+<div>
+
+    <button class="button button1" type="submit" onclick="location.href='@Url.Action("Create", "Category")'">
+        Create New
+    </button>
+
+    <button class="button button1" type="button" onclick="location.href='@Url.Action("Create", "Category")'">
+        BackToList
+    </button>
+
+</div>
+}
